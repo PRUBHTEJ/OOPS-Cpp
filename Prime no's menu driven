@@ -1,0 +1,165 @@
+
+#include<iostream.h>
+#include<conio.h>
+
+int n, i , count=0,r=0;
+void prime();
+void first();
+void between();
+void sum();
+void nprime();
+int main()
+{
+int x;
+clrscr();
+cout<<"Prog. made by Pruhtej Singh";
+cout<<"\t\t\t*****MENU*****\n1. To check whether the given no is prime or not\n2. Print first 10 prime numbers.\n3. Print prime numbers b/w 1 to 100.\n4. Print sum of first 10 prime numbers.\n5. Print first n prime numbers\n6. Exit";
+
+
+cout<<"enter your choice from the menu: ";
+cin>>x;
+while(x!=6)
+  {
+switch(x)
+    {
+case 1:
+prime();
+break;
+case 2:
+first();
+break;
+case 3:
+between();
+break;
+case 4:
+sum();
+break;
+case 5:
+nprime();
+break;
+
+default:
+cout<<"your choice is not in the menu";
+
+    }
+cout<<"\n enter your choice from the menu: ";
+cin>>x;
+    }
+
+cout<<"\n you exited the program";
+    getch();
+return 0;
+}
+
+void prime()
+{
+cout<<"enter the number you want to check";
+cin>>n;
+if(n==1)
+cout<<"the number is neither prime nor composite";
+else
+  {
+for(i=2;i<=n/2;i++)
+    {
+if(n%i==0)
+count++;
+if(count!=0)
+cout<<n<<" is not a prime number ";
+else
+cout<<n<<" is a prime number";
+
+    }
+  }
+
+}
+
+void first()
+
+
+{
+n=2;count=0;
+cout<<"first 10 prime numbers are as follows";
+while(count<10)
+  {
+for (i=2;i<=n/2;i++)
+if(n%i==0)
+r++;
+if(r==0)
+    {
+cout<<n<<"  ";
+count++;
+
+    }
+n++;
+r=0;
+
+  }
+}
+
+void between()
+{
+n=2;count=0;
+cout<<"prine numbers between 1 to 100 are :";
+while(count<100)
+  {
+
+for(i=2;i<=n/2;i++)
+if(n%i==0)
+
+
+r++;
+if(r==0)
+cout<<n<<"  ";
+n++;
+r=0;
+count++;
+       }
+}
+
+void sum()
+{
+int s=0;
+n=2;count=0;r=0;
+while(count<10)
+  {
+for(i=2;i<=n/2;i++)
+if(n%i==0)
+r++;
+if(r==1)
+    {
+s+=n;
+count++;
+
+    }
+n++;
+r=0;
+  }
+cout<<"sum of 1st 10 prime numbers is :" <<s;
+}
+
+
+void nprime()
+{
+int l;
+n=2;count=0;r=0;
+cout<<"enter the no of prime numbers you want";
+cin>>l;
+while(count<l)
+  {
+for(i=2;i<=n/2;i++)
+if(n%i==0)
+r++;
+if(r==1)
+    {
+cout<<n<<"  ";
+count++;
+
+    }
+r=0;
+n++;
+  }
+}
+
+
+ 
+
